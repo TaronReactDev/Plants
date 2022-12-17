@@ -1,0 +1,503 @@
+@import "global";
+
+body {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.container {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: $background;
+}
+
+.content-container {
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.flex-js{
+  display: flex;
+  justify-content: space-between;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.header {
+   padding-top: 42px;
+  &_logo {
+    font-family: 'Inika';
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    &_img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &_nav {
+    &_item-container {
+      font-family: 'Inika';
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 50px;
+      width: 452px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      &_item {
+        & > span:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.media-txt {
+  margin: 94px auto;
+  &__content {
+    max-width: 549px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &__title {
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 50px;
+      margin: 0;
+    }
+    &__description {
+      line-height: 35px;
+      color: $grow-description;
+      margin: 0;
+    }
+    &__btn {
+      width: 158px;
+      height: 44px;
+      font-size: 16px;
+      line-height: 20px;
+      background: #EDF2EC;
+      border: 2px solid #E06733;
+      border-radius: 10px;
+      &:hover {
+        background-color: $orange;
+        color: white;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+.projects {
+  &__navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 40px 0 90px 0;
+    &__title {
+      font-family: 'Inika';
+      font-size: 40px;
+      line-height: 52px;
+      color: $green;
+      width: 100%;
+      max-width: 306px;
+      margin: 0 142px 0 0;
+    }
+    &__navbar {
+      max-width: 560px;
+      width: 100%;
+      &__container {
+        align-items: center;
+        padding: 0;
+        &__item {
+          list-style: none;
+          &__btn {
+            width: 161px;
+            height: 50px;
+            font-family: 'Inika';
+            font-size: 20px;
+            line-height: 26px;
+            color: $orange;
+            background: #EDF2EC;
+            border: 1px solid $orange;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  &__img-galleria {
+    flex-wrap: wrap;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #E3E1D5;
+      border-radius: 0px 0px 20px 20px;
+      margin-bottom: 55px;
+      img {
+        width: 329px;
+        height: 350px;
+      }
+      &__title {
+        font-weight: 700;
+        line-height: 20px;
+        color: $orange;
+        margin: 10px 0;
+      }
+      &__description {
+        font-size: 16px;
+        line-height: 20px;
+        color: $grow-description;
+        margin-bottom: 36px;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+.price {
+  margin-top: 40px;
+  margin-bottom: 115px;
+  &__container {
+    &__title {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      color: $black;
+    }
+    &__btn-container {
+      list-style: none;
+      border: 1px solid #E3E1D5;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin-top: 60px;
+      &__item {
+        margin: 34px 41px;
+        width: 250px;
+        min-height: 50px;
+        background: #EDF2EC;
+        border: none;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        &__header {
+          margin: 16px 40px 12px 40px;
+        }
+        &__Elem {
+          font-weight: 700;
+          line-height: 20px;
+          color: $black;
+        }
+        &__arrow {
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #D9D9D9;
+          .arrow-Icon {
+            width: 4px;
+            height: 2.35px;
+            background-image: url("../../componentes/img/arrow.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: $grow-title;
+          }
+        }
+        .open {
+          background-color: #AEA1A1;
+          transform: rotate(-180deg);
+        }
+        .priceListBlock {
+          display: flex;
+          flex-direction: column;
+          margin: 0 40px 16px 40px;
+          animation: priceListBlock;
+          animation-duration: 1s;
+          overflow: hidden;
+          &__line {
+            max-width: 164px;
+            width: 100%;
+            border: 0.5px solid #AEA1A1;
+          }
+          &__description {
+            font-weight: 300;
+            font-size: 10px;
+            line-height: 10px;
+            color: $grow-title;
+            margin: 6px 0;
+          }
+          &__price {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 12px;
+            color: $orange;
+            &::before {
+              content: "$";
+              color: $orange;
+              font-size: 12px;
+            }
+            &::after {
+              content: "/ per hour";
+              font-size: 12px;
+              line-height: 20px;
+              color: $black;
+            }
+          }
+          &__order-btn {
+            width: 86px;
+            height: 25px;
+            border: none;
+            background: #FFFFFF;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: $grow-title;
+          }
+        }
+      }
+      .openPriceList {
+        background-color: #D6E7D2;
+      }
+    }
+  }
+  &__contactUs {
+    display: flex;
+    flex-direction: column;
+    &__slogan {
+      max-width: 452px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      text-align: right;
+      color: $black;
+      span {
+        color: $green;
+      }
+    }
+    &__btn {
+      width: 162px;
+      height: 50px;
+      border: 1px solid #E06733;
+      border-radius: 5px;
+      font-family: 'Inika';
+      font-weight: 700;
+      line-height: 26px;
+      text-align: center;
+      align-self: end;
+      margin: 38px 0;
+      color: $orange;
+    }
+    &__img {
+      width: 152px;
+      height: 174.99px;
+      background-image: url("../../componentes/img/leafs-small.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-self: end;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+.contactUs {
+  text-align: center;
+  padding-top: 60px;
+
+  &__title {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    margin-top: 60px;
+    color: $green;
+  }
+
+  &__content {
+    &__bgImg {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("../../componentes/img/woman.svg");
+      width: 400px;
+      height: 496.99px;
+    }
+    &__city {
+      max-width: 450px;
+      width: 100%;
+      height: 100%;
+      margin-top: 44px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #DCE9D9;
+      overflow: hidden;
+      &__section {
+        align-items: center;
+        height: 50px;
+        padding: 0 20px;
+        background: #D6E7D2;
+      }
+      &__title {
+        line-height: 40px;
+        letter-spacing: 0.05em;
+        color: $grow-title;
+      }
+      .item__arrow {
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #AEA1A1;
+        .arrow-Icon {
+          width: 4px;
+          height: 2.35px;
+          background-image: url("../../componentes/img/arrow.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    .cityList-container {
+      padding: 0;
+      margin: 15px 35px 32px 23px;
+      animation: priceListBlock;
+      animation-duration: 1s;
+      &__item {
+        list-style: none;
+        font-size: 16px;
+        line-height: 40px;
+        text-decoration: underline;
+        letter-spacing: 0.05em;
+        margin: 12px 0;
+        color: $green;
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+          color: $grow-title;
+        }
+      }
+      &__city__info {
+        padding: 17px 76px 32px 33px;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        list-style: none;
+        margin-top: 47px;
+        &__item {
+          font-size: 16px;
+          line-height: 40px;
+          text-align: start;
+          span:first-child {
+            color: $black;
+            min-width: 400px;
+            width: 100%;
+          }
+          span:last-child {
+            letter-spacing: 0.05em;
+            color: $grow-title;
+          }
+          &__call-us {
+            width: 122px;
+            height: 26px;
+            border: 1px solid $orange;
+            border-radius: 5px;
+            margin: 24px auto 0 auto;
+            a {
+              font-family: 'Inika';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 10px;
+              line-height: 13px;
+              text-align: center;
+              text-decoration: none;
+              color: $grow-title;
+
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.cityActiv {
+  background-color: #8BA07E;
+  transform: rotate(-180deg);
+}
+.cityActivContainer {
+  background-color: #C1E698;
+}
+.boxShadow{
+  box-shadow: none;
+  background-color: $background;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+.footer{
+  align-items: center;
+  line-height: 50px;
+  &__data, &__social-icons{
+    list-style: none;
+    padding: 0;
+    max-width: 188px;
+    width: 100%;
+  }
+  &__social-icons{
+      li{
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+@keyframes priceListBlock {
+  from {
+    height: 0%;
+    transform: translateY(-100%);
+  }
+  to {
+    height: 100%;
+    transform: translateY(0%);
+
+  }
+}
